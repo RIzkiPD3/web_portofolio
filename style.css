@@ -1,0 +1,544 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+}
+
+
+
+nav a {
+  color: #00f0ff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: #ffffff;
+}
+
+
+
+
+.hero-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 0 4rem;
+  box-sizing: border-box;
+  position: relative; /* ← tambahkan ini */
+}  
+
+.hero-content::before {
+  content: '';
+  width: 2px;
+  height: 70%;
+  background: linear-gradient(to bottom, #00f0ff, transparent);
+  position: absolute;
+  left: 50%;
+  top: 15%;
+  transform: translateX(-50%);
+  z-index: 0;
+  opacity: 0.5;
+  animation: glowLine 2s infinite alternate;
+}
+
+
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 25px #00f0ff88;
+  margin-top: 2rem; /* geser lebih ke bawah */
+}
+
+
+.btn-profile {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #00f0ff;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+.btn-profile:hover {
+  background-color: #00c2d3;
+}
+
+.hero-text {
+  max-width: 600px;
+  color: #ffffff;
+}
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.mini-quote {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  max-width: 200px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+.hero-stats div {
+  color: #00f0ff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.05rem;
+}
+.hero-stats div span {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.projects {
+  padding: 4rem 2rem;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.project-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px #00f0ff66;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.contact {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a1a1a;
+  font-size: 0.9rem;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+.modal-content {
+  background-color: #1a1a1a;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  color: #fff;
+  position: relative;
+  animation: fadeIn 0.5s ease;
+}
+.close-btn {
+  color: #00f0ff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: #ffffff;
+}
+
+.modal-body.horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+  text-align: left;
+}
+.modal-photo-side {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.biodata-table {
+  width: 100%;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  border-collapse: collapse;
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.biodata-table td {
+  padding: 0.6rem 0.8rem;
+  vertical-align: top;
+  border-bottom: 1px solid #333; /* Tambahkan garis bawah */
+}
+.biodata-table td:first-child {
+  width: 35%;
+  font-weight: 600;
+  color: #00f0ff;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  .modal-body.horizontal {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-photo-side {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .biodata-table {
+    font-size: 1rem;
+  }
+
+  .biodata-table td:first-child {
+    text-align: left;
+  }
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.highlight {
+  color: #00f0ff;
+}
+
+.mini-quote {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  max-width: 240px;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-stats {
+    justify-content: center;
+  }
+}
+
+@keyframes glowLine {
+  0% {
+    box-shadow: 0 0 10px #00f0ff66;
+    opacity: 0.4;
+  }
+  100% {
+    box-shadow: 0 0 25px #00f0ff;
+    opacity: 0.9;
+  }
+}
+
+
+
+.skills-box {
+  font-size: 1.1rem;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  width: 380px;
+  border-radius: 12px;
+  box-shadow: 0 0 24px var(--accent-color);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  align-self: center;
+}
+
+.skill {
+  margin-bottom: 1.5rem;
+}
+
+.skill span {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.4rem;
+}
+  to { width: inherit; }
+
+
+@media (max-width: 768px) {
+  
+}
+
+/* Tambahan untuk layout baru */
+.hero-image-wrapper {
+display: flex;
+flex-direction: row;
+gap: 2rem;
+align-items: flex-start;
+justify-content: center;
+flex-wrap: wrap;
+}
+
+/* Skill bar width variations */
+.fill.htmlcss { width: 70%; }
+.fill.php { width: 75%; }
+.fill.uiux { width: 60%; }
+.fill.js { width: 65%; }
+
+
+
+/* Optional animation */
+@keyframes fillGrow {
+from { width: 0; }
+to { width: 100%; }
+}
+
+
+
+
+
+.fill {
+height: 100%;
+background: #00f0ff;
+border-radius: 10px;
+}
+
+/* Light/dark theme support */
+:root {
+--bg-color: #0f0f0f;
+--text-color: #ffffff;
+--accent-color: #00f0ff;
+--card-bg: #1a1a1a;
+}
+
+body {
+background: var(--bg-color);
+color: var(--text-color);
+}
+
+body.light-mode {
+--bg-color: #ffffff;
+--text-color: #000000;
+--accent-color: #007bff;
+--card-bg: #f0f0f0;
+}
+
+.toggle-btn {
+background: none;
+border: none;
+font-size: 1.5rem;
+cursor: pointer;
+color: var(--accent-color);
+margin-left: 1rem;
+}
+
+/* Ensure all sections respect theme */
+.projects, .contact, .footer {
+background: var(--bg-color);
+color: var(--text-color);
+}
+
+/* Fix project card readability and shadow in light mode */
+.project-card {
+background: var(--card-bg);
+color: var(--text-color);
+box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Ensure nav and toggle align well */
+
+
+nav {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+}
+
+nav a {
+color: var(--accent-color);
+text-decoration: none;
+transition: color 0.3s;
+}
+nav a:hover {
+color: var(--text-color);
+}
+
+/* HERO background dynamic based on theme */
+
+
+body.light-mode 
+
+/* Ensure skill text is bigger and box stands out more */
+
+
+/* Bar and text spacing */
+.skill span {
+font-size: 1rem;
+font-weight: 600;
+color: var(--text-color);
+}
+
+.bar {
+height: 14px;
+margin-top: 0.3rem;
+background: #444;
+border-radius: 10px;
+}
+
+body.light-mode .bar {
+background: #ccc;
+}
+
+/* HERO background dynamic based on theme */
+.hero {
+width: 100%;
+padding: 5rem 0;
+background: var(--hero-bg, linear-gradient(135deg, #000000, #001f3f));
+animation: fadeIn 2s ease;
+}
+
+body.light-mode .hero {
+--hero-bg: #fdfdfd;
+}
+
+/* Hero text visibility fix in light mode */
+body.light-mode .hero-text h2,
+body.light-mode .hero-text p,
+body.light-mode .mini-quote,
+body.light-mode .hero-stats div,
+body.light-mode .hero-stats span {
+color: #222 !important;
+}
+
+/* Enlarged and centered skill box */
+.skills-box {
+font-size: 1rem;
+background: var(--card-bg);
+padding: 2rem;
+width: 340px;
+border-radius: 12px;
+box-shadow: 0 0 22px var(--accent-color);
+margin-top: 2rem;
+margin-bottom: 2rem;
+align-self: center;
+}
+
+.skill span {
+font-size: 1rem;
+font-weight: 600;
+color: var(--text-color);
+}
+
+.bar {
+height: 14px;
+margin-top: 0.3rem;
+background: #444;
+border-radius: 10px;
+}
+
+body.light-mode .bar {
+background: #ccc;
+}
+
+/* Navbar center fix */
+.header {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 1rem 2rem;
+background: var(--card-bg);
+box-shadow: 0 2px 10px var(--accent-color);
+}
+
+.header nav {
+display: flex;
+gap: 1.5rem;
+margin-top: 0.5rem;
+}
+
+nav a {
+color: var(--accent-color);
+text-decoration: none;
+transition: color 0.3s;
+}
+nav a:hover {
+color: var(--text-color);
+}
+
+/* Theming for light/dark mode in sections */
+.projects, .contact, .footer {
+background: var(--bg-color);
+color: var(--text-color);
+}
+
+.project-card {
+background: var(--card-bg);
+color: var(--text-color);
+box-shadow: 0 0 15px var(--accent-color);
+} 

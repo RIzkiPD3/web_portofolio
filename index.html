@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rizki Putra Dandi - Backend Engineer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>My Portfolio</h1>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="modeToggle" class="toggle-btn">☀️</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-image-wrapper">
+        <div class="hero-image">
+          <img src="Images/_DSC6425.JPG" alt="Foto Rizki Putra Dandi">
+          <a href="#" class="btn-profile">View Profile</a>
+          <p class="mini-quote">"Build clean. Scale smart. Collaborate better."</p>
+        </div>
+        <div class="skills-box">
+          <h3>My Skills</h3>
+          <div class="skill"><span>HTML/CSS</span><div class="bar"><div class="fill htmlcss"></div></div></div>
+          <div class="skill"><span>PHP</span><div class="bar"><div class="fill php"></div></div></div>
+          <div class="skill"><span>UI/UX Design</span><div class="bar"><div class="fill uiux"></div></div></div>
+          <div class="skill"><span>JavaScript</span><div class="bar"><div class="fill js"></div></div></div>
+        </div>
+      </div>
+      <div class="hero-text">
+        <h2>Calm Coding, <span class="highlight">Clear Progress</span></h2>
+        <p>Saya <strong>Rizki Putra Dandi</strong>, seorang <strong>Backend Engineer</strong> dengan spesialisasi di pengembangan sistem backend menggunakan <strong>Laravel</strong>, Dan juga memiliki keahlian pada bidang <strong>Frontend Development.</strong></p>
+        <p>Dengan pendekatan kerja yang santai namun tetap fokus pada progres, saya membangun sistem yang terstruktur, scalable, dan siap mendukung pertumbuhan aplikasi. Kolaborasi tim dan struktur yang rapi adalah prinsip utama saya dalam menyelesaikan setiap proyek teknologi.</p>
+        <div class="hero-stats">
+          <div><strong>-</strong><br><span>Tahun Pengalaman</span></div>
+          <div><strong>1</strong><br><span>Proyek Laravel</span></div>
+          <div><strong>1</strong><br><span>Kolaborasi Tim</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="project-list"></div>
+  </section>
+  <section id="view-project" class="view-project">
+    <h2 style="text-align:center; color: var(--accent-color);">View Project</h2>
+    <div class="project-detail" style="max-width:800px; margin:2rem auto; text-align:center;">
+      <img src="Images/BMI Calculator.jpg" alt="Sample Project" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; box-shadow:0 0 15px var(--accent-color);">
+      <p style="margin-top:1rem; font-size:1.1rem; line-height:1.6;">
+        Ini adalah project pertama saya saat saya mengikuti revou fundamental course yakni Kalkulator BMI.
+        Saya menggunakan HTML, CSS, dan JavaScript untuk membuat kalkulator ini.
+      </p>
+      <a href="https://revou-fundamental-course.github.io/30-oct-23-Rekka02/" target="_blank" style="display:inline-block; margin-top:1rem; padding:0.5rem 1.5rem; background:var(--accent-color); color:#000; font-weight:bold; border-radius:8px; text-decoration:none;">
+        Lihat Proyek
+      </a>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email me at <a href="mailto:rizkiputradandi.dev@gmail.com">rizkiputradandi.dev@gmail.com</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Rizki Putra Dandi. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Modal View Profile -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div class="modal-body horizontal">
+        <img src="Images/_DSC6425.JPG" alt="Foto Rizki" class="modal-photo-side">
+        <table class="biodata-table">
+          <tr><td><strong>Nama</strong></td><td>Rizki Putra Dandi</td></tr>
+          <tr><td><strong>Tempat, Tgl Lahir</strong></td><td>Sijunjung, 02 Februari 2006</td></tr>
+          <tr><td><strong>Alamat</strong></td><td>Desa tirtohargo dsn kalangan, Gegunung, Yogyakarta, indonesia</td></tr>
+          <tr><td><strong>Email</strong></td><td>rizkiputradandi.dev@gmail.com</td></tr>
+          <tr><td><strong>No. HP</strong></td><td>-</td></tr>
+          <tr><td><strong>Pendidikan</strong></td><td>Santri Programmer, Pondok IT</td></tr>
+          <tr><td><strong>Posisi</strong></td><td>Backend Engineer (Laravel Specialist)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
